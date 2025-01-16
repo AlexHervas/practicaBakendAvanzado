@@ -5,6 +5,7 @@ import cookieParser from 'cookie-parser'
 import connectMongoose from './lib/connectMongoose.js'
 import * as sessionManager from './lib/sessionManager.js'
 import {homeController, loginController, productsController} from './controllers/index.js'
+import * as apiProductsController from './controllers/api/apiProductsController.js'
 
 // espero a que se conecte a la base de datos
 console.log('Connecting to DB...')
@@ -24,6 +25,11 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
 app.use(express.static('public'))
+
+/**
+ * API routes
+ */
+app.get('/api/product', apiProductsController.apiProductList)
 
 /**
  * Application routes
