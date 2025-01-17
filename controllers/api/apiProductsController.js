@@ -30,9 +30,22 @@ export async function apiProductList(req, res, next) {
         const productsCount = await Product.countDocuments(filters)
 
         res.json({ 
-            result: products,
+            results: products,
             count: productsCount,
          })
+
+    } catch (error) {
+        next(error)
+    }
+}
+
+export async function apiProductGetOne(req, res, next) {
+    try {
+        const productId = req.params.productId
+
+        const product = await Product.findById(productId)
+
+        res.json({ result: product })
 
     } catch (error) {
         next(error)
