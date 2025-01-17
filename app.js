@@ -5,6 +5,7 @@ import cookieParser from 'cookie-parser'
 import connectMongoose from './lib/connectMongoose.js'
 import * as sessionManager from './lib/sessionManager.js'
 import {homeController, loginController, productsController} from './controllers/index.js'
+import upload from './lib/uploadConfigure.js'
 import * as apiProductsController from './controllers/api/apiProductsController.js'
 
 // espero a que se conecte a la base de datos
@@ -46,7 +47,7 @@ app.all('/logout', loginController.logout)
   const productsRouter = express.Router()
   // productsRouter.use(session.guard) -- optional
   productsRouter.get('/new', productsController.indexNew)
-  productsRouter.post('/new', productsController.postNew)
+  productsRouter.post('/new', upload.single('image'), productsController.postNew)
   productsRouter.get('/delete/:productId', productsController.deleteOne)
   app.use('/products', sessionManager.guard, productsRouter)
 }

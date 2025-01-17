@@ -4,7 +4,7 @@
   <h1>New product</h1>
   <p>For userId: <%= session.userId %></p>
 
-  <form method="POST">
+  <form method="POST" enctype="multipart/form-data">
 
     <div class="mb-3">
       <label for="nameInput" class="form-label">Name</label>
@@ -17,6 +17,13 @@
         type="number" required
         min="0" value="0" step=".01"
         name="price" class="form-control" id="priceInput">
+    </div>
+
+    <div class="mb-3">
+      <label for="customFile" class="form-label">Image</label>
+      <input
+        type="file"
+        name="image" class="form-control" id="customFile">
     </div>
 
     <div class="form-check">
