@@ -15,6 +15,7 @@ export async function postNew(req, res, next) {
     product.owner = userId
     product.price = Math.trunc(product.price * 100) // store only 2 decimals
     product.tags = product.tags?.filter(tag => !!tag) // filter blank tags
+    product.image = req.file.filename
 
     // la persistimos en la BD
     const savedProduct = await product.save()

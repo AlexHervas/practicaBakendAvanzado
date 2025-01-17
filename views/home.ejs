@@ -24,7 +24,7 @@
         <tr>
           <td><%= product.name %></td>
           <td style="text-align: right"><%= product.price / 100 %>€</td>
-          <td><img src="images/products/<%= product.image %>"></td>
+          <td><img src="<%= product.image ? `/productsImages/${product.image}` : 'https://placehold.co/50' %>" alt="image"></td>
           <td><%= product.tags.join(', ') %></td>
           <td><a
             onclick="confirmDelete('<%= product.name %>', '<%= product._id %>')"
