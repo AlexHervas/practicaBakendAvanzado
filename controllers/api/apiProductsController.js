@@ -31,7 +31,7 @@ export async function apiProductList(req, res, next) {
 
         res.json({ 
             result: products,
-            total: productsCount,
+            count: productsCount,
          })
 
     } catch (error) {

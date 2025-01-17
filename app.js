@@ -29,7 +29,7 @@ app.use(express.static('public'))
 /**
  * API routes
  */
-app.get('/api/product', apiProductsController.apiProductList)
+app.get('/api/products', apiProductsController.apiProductList)
 
 /**
  * Application routes
