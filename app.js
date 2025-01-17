@@ -57,7 +57,24 @@ app.use((req, res, next) => {
 
 // error handler
 app.use((err, req, res, next) => {
+
+  // validation errors
+  if (err.array) {
+    err.message = 'Invalid request: ' + err.array()
+    .map(e => `${e.location} ${e.type} ${e.path} ${e.msg}`)
+    .join(', ')
+    err.status = 422
+  }
+
+
   res.status(err.status || 500)
+
+  // API error, send response with JSON
+  if(req.url.startsWith('/api/')) {
+    res.json({ error: err.message })
+    return
+  }
+
   // set locals, only providing error in development
   res.locals.message = err.message
   res.locals.error = req.app.get('env') === 'development' ? err : {}
