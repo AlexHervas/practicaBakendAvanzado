@@ -87,3 +87,16 @@ export async function apiProductUpdate(req, res, next) {
         next(error)
     }
 }
+
+export async function apiProductDelete(req, res, next) {
+    try {
+        const productId = req.params.productId
+
+        await Product.deleteOne({ _id: productId })
+
+        res.json()
+        
+    } catch (error) {
+        next(error)
+    }
+}

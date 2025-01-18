@@ -34,6 +34,7 @@ app.get('/api/products', apiProductsController.apiProductList)
 app.get('/api/products/:productId', apiProductsController.apiProductGetOne)
 app.post('/api/products',  upload.single('image'), apiProductsController.apiProductNew)
 app.put('/api/products/:productId', upload.single('image'), apiProductsController.apiProductUpdate)
+app.delete('/api/products/:productId', apiProductsController.apiProductDelete)
 
 /**
  * Application routes
