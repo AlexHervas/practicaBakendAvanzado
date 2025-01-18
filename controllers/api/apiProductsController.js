@@ -51,3 +51,22 @@ export async function apiProductGetOne(req, res, next) {
         next(error)
     }
 }
+
+export async function apiProductNew(req, res, next) {
+    try {
+        const productData = req.body
+
+        // create product instance in memory
+        const product = new Product(productData)
+        // if req.file exists will be used, optional with
+        product.image = req.file?.filename
+
+        // save product
+        const savedProduct = await product.save()
+
+        res.status(201).json({ result: savedProduct })
+
+    } catch (error) {
+        next(error)
+    }
+}
