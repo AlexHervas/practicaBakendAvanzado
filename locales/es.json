@@ -16,9 +16,11 @@
 	"login": "iniciar sesión",
 	"Email address": "Correo electrónico",
 	"Password": "Contraseña",
-	"Submit": "Enviar",
 	"Lifestyle": "Estilo de vida",
 	"Mobile": "Móvil",
 	"Work": "Trabajo",
-	"We ll never share your email with anyone else.": "Nunca compartiremos tu correo con nadie."
+	"We ll never share your email with anyone else.": "Nunca compartiremos tu correo con nadie.",
+	"total products:": "productos totales:",
+	"Enter": "Entrar",
+	"Create": "Crear"
 }

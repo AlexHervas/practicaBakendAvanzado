@@ -28,6 +28,10 @@
       </ul>
 
       <div class="col-md-3 text-end">
+        <% getLocales().forEach( lang => { %>
+          <a href="/change-locale/<%= lang %>">
+            <img src="/images/<%= lang %>.png" alt="<%= lang %>"></a>
+        <% }) %>
         <% if (!session.userId) { %>
           <a href="/login" class="btn btn-outline-primary me-2"><%= __('Login') %></a>
         <% } else { %>

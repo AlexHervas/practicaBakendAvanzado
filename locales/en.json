@@ -16,9 +16,11 @@
 	"login": "login",
 	"Email address": "Email address",
 	"Password": "Password",
-	"Submit": "Submit",
 	"Lifestyle": "Lifestyle",
 	"Mobile": "Mobile",
 	"Work": "Work",
-	"We ll never share your email with anyone else.": "We ll never share your email with anyone else."
+	"We ll never share your email with anyone else.": "We ll never share your email with anyone else.",
+	"total products:": "total products:",
+	"Enter": "Enter",
+	"Create": "Create"
 }
