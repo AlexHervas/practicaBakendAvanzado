@@ -1,3 +1,4 @@
+import { thumbnailRequest } from '../../lib/thumbnailRequester.js'
 import Product from '../../models/Product.js'
 
 export async function apiProductList(req, res, next) {
@@ -63,6 +64,7 @@ export async function apiProductNew(req, res, next) {
 
         // save product
         const savedProduct = await product.save()
+        thumbnailRequest({ image: product.image })
 
         res.status(201).json({ result: savedProduct })
 
@@ -80,6 +82,7 @@ export async function apiProductUpdate(req, res, next) {
         const updatedProduct = await Product.findByIdAndUpdate(productId, productData, {
             new: true,
         })
+        thumbnailRequest({ image: productData.image })
 
         res.json({ result: updatedProduct })
 

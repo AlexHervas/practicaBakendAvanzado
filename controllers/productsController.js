@@ -1,5 +1,6 @@
 import createError from 'http-errors'
 import { Product } from '../models/index.js'
+import { thumbnailRequest } from '../lib/thumbnailRequester.js'
 
 export async function indexNew(req, res, next) {
   res.render('products/new')
@@ -19,6 +20,7 @@ export async function postNew(req, res, next) {
 
     // la persistimos en la BD
     const savedProduct = await product.save()
+    thumbnailRequest({ image: product.image })
 
     res.redirect('/');
   } catch (error) {

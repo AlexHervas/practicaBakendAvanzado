@@ -1,0 +1,19 @@
+{
+  "name": "microservices",
+  "version": "1.0.0",
+  "main": "thumbnailsCreator.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node thumbnailsCreator.js",
+    "dev": "node --watch thumbnailsCreator.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cote": "^1.2.0",
+    "jimp": "^1.6.0"
+  }
+}

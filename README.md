@@ -68,6 +68,7 @@ GET /api/products
     },
     // ...
   ],
-  "count": 6
+  "count
+  ": 6
 }
 ```
