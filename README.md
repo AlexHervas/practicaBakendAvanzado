@@ -1,5 +1,9 @@
 # Nodepop Fundamentos
 
+## OPTIONAL - create a npm package
+
+- https://www.npmjs.com/package/stackoverlord-npm-package
+
 ## Deploy
 
 ### Install dependencies
@@ -72,3 +76,57 @@ GET /api/products
   ": 6
 }
 ```
+
+### Get one product by id
+
+GET /api/products/:productId  
+Example: /api/products/67895ebafad0445cbc354eac
+
+``` json
+{
+    "result": {
+        "_id": "67895ebafad0445cbc354eac",
+        "name": "Iphone",
+        "owner": "67895ebafad0445cbc354ea5",
+        "price": 5000,
+        "image": "iphone.png",
+        "tags": [
+            "lifestyle",
+            "mobile"
+        ],
+        "__v": 0
+    }
+}
+```
+
+### Create new product
+
+POST /api/products/  
+
+### Update product by id
+
+PUT /api/products/:productId
+
+Example: /api/products/67895ebafad0445cbc354eac  
+Changing values of price and image whit using the product id
+
+``` json
+{
+    "result": {
+        "_id": "67895ebafad0445cbc354eac",
+        "name": "Iphone",
+        "owner": "67895ebafad0445cbc354ea5",
+        "price": 50,
+        "image": "image-1737305699993-Capture-202600.jpg",
+        "tags": [
+            "lifestyle",
+            "mobile"
+        ],
+        "__v": 0
+    }
+}
+```
+
+### Delete product by id
+
+DELETE /api/products/:productId
